@@ -4,10 +4,9 @@ ini_set('display_errors',1);
 ini_set('display_startup_errors',1);
 error_reporting(E_ALL);
 
-$database = require './core/boostrap.php';
+$database = require 'core/boostrap.php';
 
-$router = new Router;
+$url = trim($_SERVER['REQUEST_URI'], '/');
 
-require './routes.php';
-
-require $router->direct('index');
+require Router::load('routes.php')
+  ->direct($url);
