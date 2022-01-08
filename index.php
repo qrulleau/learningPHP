@@ -7,4 +7,4 @@ error_reporting(E_ALL);
 require 'core/boostrap.php';
 
 require Router::load('routes.php')
-  ->direct('Request::url()');
+  ->direct(Request::url());
