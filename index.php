@@ -6,7 +6,5 @@ error_reporting(E_ALL);
 
 $database = require 'core/boostrap.php';
 
-$url = trim($_SERVER['REQUEST_URI'], '/');
-
 require Router::load('routes.php')
-  ->direct($url);
+  ->direct(Request::url());
